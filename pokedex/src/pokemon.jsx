@@ -23,12 +23,14 @@ const Pokemon = (id) =>{
     
     
     function parsePokeAPIResponse(json){
+
+        const official = "official-artwork";
         const Pokemonx = {
             name: json.name,
             weight: (json.weight/10),
             height: (json.height*10),
             abilities : [],
-            sprites: json.sprites.front_default,
+            sprites: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`,
             stats: [],
 
 
