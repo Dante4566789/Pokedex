@@ -25,8 +25,8 @@ const Pokemon = (id) =>{
     function parsePokeAPIResponse(json){
         const Pokemonx = {
             name: json.name,
-            weight: json.weight,
-            height: json.height,
+            weight: (json.weight/10),
+            height: (json.height*10),
             abilities : [],
             sprites: json.sprites.front_default,
             stats: [],

@@ -16,7 +16,7 @@ const Pokedex = ()=>{
                     <div className="card-content">
                         <h1>{pokemon.name}</h1>
                         <h2>Weight : {pokemon.weight}kg</h2>
-                        <h2>Height : {pokemon.height}kg</h2>
+                        <h2>Height : {pokemon.height}cm</h2>
                         <div className="card-stats">
                             {pokemon.stats && pokemon.stats.length > 0 ? (
                                 <ul>
