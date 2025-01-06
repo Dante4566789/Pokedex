@@ -7,7 +7,7 @@ import Pokedex from './pokedex.jsx'
 import Pokemon from './pokemon.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  <div>
     <Pokedex/>
-  </StrictMode>,
+  </div>,
 )

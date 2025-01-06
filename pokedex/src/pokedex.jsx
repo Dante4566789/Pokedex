@@ -1,38 +1,50 @@
-import Pokemon from "./pokemon"
-import "./index.css"
+import Pokemon from "./pokemon";
+import "./index.css";
+import card from "./card";
+import { useEffect, useState } from "react";
 
+const Pokedex = () => {
+  const [finalCount, setFinalCount] = useState(1300);
 
-const Pokedex = ()=>{
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(
+        `https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0`
+      );
+      const json = await response.json();
 
-    const pokemon = Pokemon(1);
+      const p = parseFinalCount(json);
+      setFinalCount(p);
+    };
+    fetchData();
+  }, []);
 
-    return(
-        <section className="Pokedex">
-            <div className="container">
-                <div className="card">
-                    <div className="card-image">
-                        <img src={pokemon.sprites}></img>
-                    </div>
-                    <div className="card-content">
-                        <h1>{pokemon.name}</h1>
-                        <h2>Weight : {pokemon.weight}kg</h2>
-                        <h2>Height : {pokemon.height}cm</h2>
-                        <div className="card-stats">
-                            {pokemon.stats && pokemon.stats.length > 0 ? (
-                                <ul>
-                                    {pokemon.stats.map((stat) => (
-                                        <li key={stat.name_stats}>{stat.name_stats} : {stat.value}</li>
-                                    ))}
-                                </ul>
-                                ) : (
-                                    <p>No stats available</p>
-                                )}
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    )
-}
+  function parseFinalCount(json) {
+    const finalCountx = parseInt(json.count, 10);
 
-export default Pokedex
+    return finalCountx;
+  }
+ 
+  
+
+  const counts = [];
+  for(let index=1; index <= finalCount; index++){
+    counts.push(index)
+  }
+ 
+  const visibleCounts = counts.slice(0, 1025);
+  console.log("finalCount:", finalCount);
+  console.log("counts:", counts);
+  
+
+  return (
+    <section className="Pokedex">
+     { visibleCounts.map((id) => {
+        
+        return <div key={id}>{card(id)}</div>;
+      })}
+    </section>
+  );
+};
+
+export default Pokedex;

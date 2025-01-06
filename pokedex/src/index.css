@@ -63,15 +63,21 @@ button:focus-visible {
 .Pokedex{
   width : 100vw;
   padding : 50px;
+  display: flex;
+  flex-direction: row;
+
+}
+.card-pokemon{
+  width : 100%;
 }
 .container{
   width : 100%;
   display: flex;
-  flex-direction: row;
-  text-align: left;
-  justify-content: left;
-  align-items: baseline;
-  align-content: baseline;
+  flex-direction: column;
+  text-align: center;
+  justify-content: stretch;
+  align-items: center;
+  align-content: center;
 }
 .card{
   border-radius: 20px;
@@ -79,7 +85,7 @@ button:focus-visible {
   flex-direction: column;
   justify-content: space-around;
   box-shadow: 0px 0px 10px#1a1a1a;
-  width : 23%;
+  width : 90%;
   margin: 0px;
   gap : 0px;
   background-color:#ffffff

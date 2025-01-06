@@ -24,7 +24,7 @@ const Pokemon = (id) =>{
     
     function parsePokeAPIResponse(json){
 
-        const official = "official-artwork";
+        
         const Pokemonx = {
             name: json.name,
             weight: (json.weight/10),
