@@ -19,7 +19,7 @@ const Pokemon = (id) =>{
         
         
 
-    }, [])
+    }, [id])
     
     
     function parsePokeAPIResponse(json){
