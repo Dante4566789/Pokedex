@@ -35,7 +35,7 @@ const Card = ({ id }) => {
 
   const options = {
     max: 30,
-    scale: 1.0,
+    scale: 1.1,
     speed: 7000,
     easing: "ease",
   };

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "./card";
 import "./index.css";
+import logo from "/workspaces/Pokedex/pokedex/src/assets/logo.png";
 
 const Pokedex = () => {
   const [finalCount, setFinalCount] = useState(0);
@@ -31,13 +32,23 @@ const Pokedex = () => {
   console.log("visibleCounts:", visibleCounts);
 
   return (
+    <section className="Pokedex-container">
+      <div className="logo">
+        <img
+          src={logo}
+          alt="logo"
+        />
+      </div>
     <section className="Pokedex">
+      
+      
       {visibleCounts.map((id) => (
         <Card key={id} id={id} />
       ))}
       {visibleCount < finalCount && (
         <button onClick={loadMorePokemon}>Other Pokemon</button>
       )}
+    </section>
     </section>
   );
 };
