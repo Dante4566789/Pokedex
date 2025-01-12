@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "./card";
 import "./index.css";
-import logo from "/workspaces/Pokedex/pokedex/src/assets/logo.png";
+import logo from "./assets/logo.png";
 
 const Pokedex = () => {
   const [finalCount, setFinalCount] = useState(0);
