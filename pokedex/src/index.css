@@ -86,12 +86,12 @@ button:focus-visible {
   }
   
   .Pokedex{
-    width : 60vw;
+    width : 100vw;
     padding : 50px;
     display: flex;
     flex-direction: row;
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 17% 17% 17% 17%;
     column-gap: 50px;
     row-gap : 50px;
     justify-content: center;
@@ -122,7 +122,7 @@ button:focus-visible {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    box-shadow: 0px 3px 10px 0px rgba(255, 255, 255, 10%);
+    box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 15%);
     width : 100%;
     margin: 0px;
     gap : 0px;
@@ -157,6 +157,52 @@ button:focus-visible {
   .card-content h1,h2,div{
     margin : 0;
   }
+
+  
+  .list-type ul{
+    display: flex;
+    flex-direction: row;
+    gap : 10px;
+    justify-content: left;
+    align-items: baseline;
+    align-content: baseline;
+    text-align: left;
+    margin : 0px;
+    padding-inline-start : 0px;
+    padding-top : 10px;
+    
+  }
+  .list-type ul li{
+    list-style-type: none;
+    border-radius : 20px;
+    color : black;
+    margin : 0px;
+    background-color: rgba(255, 255, 255, 100%);
+    padding : 10px 20px;
+    text-align: left;
+    
+  }
+  .search-panel input{
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.02);
+    padding : 10px 20px;
+    color : white;
+  
+  }
+  .search-panel input:hover{
+    
+  }
+  .search-panel input:focus{
+   
+    outline: none;
+  }
+  .search-panel{
+    border: none;
+  }
+  .search-panel:hover{
+    border: none;
+  }
+  
   
   
   

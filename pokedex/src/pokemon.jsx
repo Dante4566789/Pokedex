@@ -32,6 +32,7 @@ const Pokemon = (id) =>{
             abilities : [],
             sprites: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`,
             stats: [],
+            type : [],
 
 
         };
