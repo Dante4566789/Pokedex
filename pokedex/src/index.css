@@ -66,13 +66,16 @@ button {
   transition: border-color 0.25s;
   margin: 0;
   justify-content: start;
-  transition: all 0.2s ease-in
+  transition: all 0.2s ease-in;
+  color: black;
+  border: solid #0d0d0d;
 }
 
 button:hover {
   border-color: white;
   color: white;
   background-color: black;
+  border: solid #0d0d0d;
 
 }
 
@@ -101,15 +104,16 @@ button:focus-visible {
 }
 
 .Pokedex {
-  width: 100vw;
+  width: 70vw;
   padding: 50px;
   display: flex;
   flex-direction: row;
   display: grid;
-  grid-template-columns: 17% 17% 17% 17%;
+  grid-template-columns: 25% 25% 25% 25%;
   column-gap: 50px;
   row-gap: 50px;
   justify-content: center;
+
 }
 
 .card-pokemon {
@@ -127,6 +131,7 @@ button:focus-visible {
   align-content: center;
   background-color: rgba(255, 255, 255, 0.02);
   border-radius: 20px;
+  position : relative;
 
 }
 
@@ -137,7 +142,7 @@ button:focus-visible {
 
 .card {
   border-radius: 20px;
-
+  
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -154,7 +159,7 @@ button:focus-visible {
 }
 
 .card-image img {
-  width: 150px;
+  width: 100%;
   text-align: center;
 }
 
@@ -171,12 +176,18 @@ button:focus-visible {
   align-items: baseline;
   align-content: baseline;
   text-align: left;
-  padding-left: 20px;
-  padding-bottom: 30px
+  padding-left: 0px;
+  padding-bottom: 30px;
+  width : 100%;
+  
+  
 }
 
-.card-content h1, h2, div {
-  margin: 0;
+  
+
+.card-content h1 {
+  margin : auto 0;
+  font-size: clamp(0.625rem, 0.3602rem + 1.1299vw, 1.25rem);;
 }
 
 
@@ -191,17 +202,18 @@ button:focus-visible {
   margin: 0px;
   padding-inline-start: 0px;
   padding-top: 10px;
-
+  width: 100%;
 }
 
 .list-type ul li {
   list-style-type: none;
-  border-radius: 20px;
+  border-radius: 10px;
   color: black;
   margin: 0px;
   background-color: rgba(255, 255, 255, 100%);
-  padding: 10px 20px;
+  padding: 5px 10px;
   text-align: left;
+  font-size: clamp(0.5rem, 0.3676rem + 0.565vw, 0.8125rem);;
 
 }
 
@@ -236,7 +248,7 @@ button:focus-visible {
 
 @media screen and (max-width: 768px) {}
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
   .Pokedex {
     width: 40vw;
     grid-template-columns: auto auto;
@@ -253,32 +265,7 @@ button:focus-visible {
 
 }
 
-@media screen and (max-width: 480px) {
-  .Pokedex-container {
-    gap: 0px;
-  }
 
-  .Pokedex {
-    width: 100vw;
-    grid-template-columns: auto auto;
-    padding-left: 50px;
-    padding-right: 50px;
-  }
-
-  .logo img {
-    width: 150px;
-  }
-
-  .card-image img {
-    width: 50px;
-  }
-
-  .card {
-    padding: 0px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-}
 
 
 
