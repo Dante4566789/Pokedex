@@ -270,7 +270,6 @@ button:focus-visible {
 
 
 
-
 .container-SinglePokemon {
   max-width: 60vw;
   min-width: 50vw;
@@ -330,4 +329,49 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  .container-SinglePokemon {
+    flex-direction: column;
+    gap: 20px;
+    max-width: 30vw;
+    margin: 100px auto;
+    padding-bottom : 20px;
+  }
+
+  
+
+  .card-SinglePokemon {
+    width: 100%;
+  }
+
+  .card-SinglePokemon img {
+    width: 100%;
+  }
+
+  .header-card-SinglePokemon {
+    width: 100%;
+  }
+
+  .header-card-SinglePokemon h2 {
+    font-size: 1.5rem;
+  }
+
+  .header-card-SinglePokemon p {
+    font-size: 1rem;
+  }
+
+  .header-description-SinglePokemon {
+    width: 100%;
+  }
+
+  .header-description-SinglePokemon h3 {
+    font-size: 1.5rem;
+  }
+
+  .header-description-SinglePokemon p {
+    font-size: 1rem;
+  }
+  
 }
