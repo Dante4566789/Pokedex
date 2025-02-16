@@ -1,11 +1,19 @@
+@keyframes neonGlow {
+  0% { box-shadow: 0 0 5px #ff0000; }
+  50% { box-shadow: 0 0 20px #ff0000; }
+  100% { box-shadow: 0 0 5px #ff0000; }
+}
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background: url('./assets/spikes.webp') repeat, #0d0d0d;
+  opacity: 0.9;
+  
+
+  
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,15 +21,19 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #ffffff;
   text-decoration: inherit;
 }
+
 a:hover {
-  color: #535bf2;
+  color: #ffffff;
 }
-*{
+
+* {
   margin: auto;
   box-sizing: border-box;
 }
@@ -32,8 +44,9 @@ body {
   justify-content: center;
   align-items: center;
   align-content: center;
-  
+
   min-height: 100vh;
+
 }
 
 h1 {
@@ -51,16 +64,18 @@ button {
   background-color: white;
   cursor: pointer;
   transition: border-color 0.25s;
-  margin : 0;
+  margin: 0;
   justify-content: start;
-  transition : all 0.2s ease-in
+  transition: all 0.2s ease-in
 }
+
 button:hover {
   border-color: white;
-  color:white;
+  color: white;
   background-color: black;
 
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -68,185 +83,264 @@ button:focus-visible {
 
 
 
-  .Pokedex-container{
-    width : 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    gap : 20px;
-    padding-top : 50px;
-    padding-bottom : 50px;
-  }
-  
-  .logo img{
-    width : 500px;
-    
-  }
-  
-  .Pokedex{
-    width : 100vw;
-    padding : 50px;
-    display: flex;
-    flex-direction: row;
-    display: grid;
-    grid-template-columns: 17% 17% 17% 17%;
-    column-gap: 50px;
-    row-gap : 50px;
-    justify-content: center;
-  }
-  .card-pokemon{
-    width : 100%;
-    
-  }
-  .container{
-    width : 100%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: stretch;
-    align-items: center;
-    align-content: center;
-    background-color: rgba(255, 255, 255, 0.02);
-    border-radius : 20px;
-  
-  }
-  .container:hover{
-    cursor: pointer;
-    
-  }
-  .card{
-    border-radius: 20px;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 15%);
-    width : 100%;
-    margin: 0px;
-    gap : 0px;
-    padding : 20px;
-    background-color: rgba(255, 255, 255, 0.02)
-    
-  }
-  .tilt-card{
-    width: 100%;
-  }
-  .card-image img{
-    width : 150px;
-    text-align: center;
-  }
-  .card-image{
-    text-align: center;
-  }
-  
-  .card-content{
-    display: flex;
-    flex-direction: column;
-    gap : 10px;
-    justify-content: left;
-    margin: 0;
-    align-items: baseline;
-    align-content: baseline;
-    text-align: left;
-    padding-left : 20px;
-    padding-bottom : 30px
-  }
-  
-  .card-content h1,h2,div{
-    margin : 0;
-  }
-
-  
-  .list-type ul{
-    display: flex;
-    flex-direction: row;
-    gap : 10px;
-    justify-content: left;
-    align-items: baseline;
-    align-content: baseline;
-    text-align: left;
-    margin : 0px;
-    padding-inline-start : 0px;
-    padding-top : 10px;
-    
-  }
-  .list-type ul li{
-    list-style-type: none;
-    border-radius : 20px;
-    color : black;
-    margin : 0px;
-    background-color: rgba(255, 255, 255, 100%);
-    padding : 10px 20px;
-    text-align: left;
-    
-  }
-  .search-panel input{
-    border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.02);
-    padding : 10px 20px;
-    color : white;
-  
-  }
-  .search-panel input:hover{
-    
-  }
-  .search-panel input:focus{
-   
-    outline: none;
-  }
-  .search-panel{
-    border: none;
-  }
-  .search-panel:hover{
-    border: none;
-  }
-  
-  
-  
-  
-
-
-
-@media screen and (max-width: 768px) {
-  
+.Pokedex-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
+.logo img {
+  width: 500px;
+
+}
+
+.Pokedex {
+  width: 100vw;
+  padding: 50px;
+  display: flex;
+  flex-direction: row;
+  display: grid;
+  grid-template-columns: 17% 17% 17% 17%;
+  column-gap: 50px;
+  row-gap: 50px;
+  justify-content: center;
+}
+
+.card-pokemon {
+  width: 100%;
+
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: stretch;
+  align-items: center;
+  align-content: center;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-radius: 20px;
+
+}
+
+.container:hover {
+  cursor: pointer;
+
+}
+
+.card {
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 15%);
+  width: 100%;
+  margin: 0px;
+  gap: 0px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.02)
+}
+
+.tilt-card {
+  width: 100%;
+}
+
+.card-image img {
+  width: 150px;
+  text-align: center;
+}
+
+.card-image {
+  text-align: center;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: left;
+  margin: 0;
+  align-items: baseline;
+  align-content: baseline;
+  text-align: left;
+  padding-left: 20px;
+  padding-bottom: 30px
+}
+
+.card-content h1, h2, div {
+  margin: 0;
+}
+
+
+.list-type ul {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: left;
+  align-items: baseline;
+  align-content: baseline;
+  text-align: left;
+  margin: 0px;
+  padding-inline-start: 0px;
+  padding-top: 10px;
+
+}
+
+.list-type ul li {
+  list-style-type: none;
+  border-radius: 20px;
+  color: black;
+  margin: 0px;
+  background-color: rgba(255, 255, 255, 100%);
+  padding: 10px 20px;
+  text-align: left;
+
+}
+
+.search-panel input {
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.02);
+  padding: 10px 20px;
+  color: rgb(0, 0, 0);
+
+}
+
+.search-panel input:hover {}
+
+.search-panel input:focus {
+
+  outline: none;
+}
+
+.search-panel {
+  border: none;
+}
+
+.search-panel:hover {
+  border: none;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {}
+
 @media only screen and (max-width: 600px) {
-  .Pokedex{
-    width : 40vw;
+  .Pokedex {
+    width: 40vw;
     grid-template-columns: auto auto;
   }
-  .logo img{
+
+  .logo img {
     width: 200px;
   }
-  .card-image img{
-    width : 100px;
+
+  .card-image img {
+    width: 100px;
   }
 
-  
+
 }
 
 @media screen and (max-width: 480px) {
-  .Pokedex-container{
-    gap:0px;
+  .Pokedex-container {
+    gap: 0px;
   }
-  .Pokedex{
-    width : 100vw;
+
+  .Pokedex {
+    width: 100vw;
     grid-template-columns: auto auto;
     padding-left: 50px;
     padding-right: 50px;
   }
-  .logo img{
+
+  .logo img {
     width: 150px;
   }
-  .card-image img{
-    width : 50px;
+
+  .card-image img {
+    width: 50px;
   }
-  .card{
-    padding : 0px;
+
+  .card {
+    padding: 0px;
     padding-top: 10px;
     padding-bottom: 10px;
   }
+}
+
+
+
+
+
+.container-SinglePokemon {
+  max-width: 60vw;
+  min-width: 50vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  gap: 20px;
+  background-color: rgba(46, 45, 45, 0.89);
+  border-radius: 20px;
+  padding : 10px 10px;
+  margin: 0px;
+}
+
+.card-SinglePokemon {
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 15%);
+  width: 50%;
+  margin: 0px;
+  gap: 20px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.02)
+}
+
+.card-SinglePokemon img {
+  width: 100%;
+}
+
+.header-card-SinglePokemon h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.header-card-SinglePokemon p {
+ 
+  font-size: 25px;
+}
+
+.header-card-SinglePokemon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  align-items: start;
+  align-content: center ;
+  gap: 20px;
+  width: 50%;
+  margin: 0;
+}
+
+.header-description-SinglePokemon {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

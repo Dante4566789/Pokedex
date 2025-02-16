@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { Tilt } from "react-tilt";
-import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
-const Card = ({ id }) => {
+const SinglePokemon = () => {
+  const { id } = useParams();
+  console.log(id);
   const [pokemon, setPokemon] = useState({});
 
   useEffect(() => {
@@ -28,19 +29,11 @@ const Card = ({ id }) => {
       type: json.types.map((elem) => elem.type.name),
     };
   }
-
-  const tiltStyle = {
-    width: "100%",
-    transform: "perspective(1000px)",
-  };
-
-  const options = {
-    max: 30,
-    scale: 1.1,
-    speed: 7000,
-    easing: "ease",
-  };
-
+  function Cap(name) {
+    const firstLetter = name.charAt(0).toUpperCase();
+    const rest = name.slice(1);
+    return firstLetter + rest;
+  }
   function getBackgroundColor(type) {
     switch (type) {
       case "fire":
@@ -90,44 +83,50 @@ const Card = ({ id }) => {
     }
   }
 
-  function Cap(name) {
-    const firstLetter = name.charAt(0).toUpperCase();
-    const rest = name.slice(1);
-    return firstLetter + rest;
-  }
-
   return (
-    <section className="card-pokemon">
-      <Link to={`/pokemon/${id}`} key={id}>
-        <Tilt options={options} style={tiltStyle}>
-          <div className="container">
-            <div
-              className="card"
-              style={{
-                backgroundColor:
-                  pokemon.type && pokemon.type.length > 0
-                    ? getBackgroundColor(pokemon.type[0])
-                    : "gray",
-              }}
-            >
-              <div className="card-image">
-                <img src={pokemon.sprites} alt={pokemon.name} />
-              </div>
-              <div className="card-content">
-                <h1>{pokemon.name ? Cap(pokemon.name) : "non trovato"}</h1>
-                <div className="list-type">
-                  <ul>
-                    {pokemon.type &&
-                      pokemon.type.map((type) => <li key={type}>{type}</li>)}
-                  </ul>
-                </div>
-              </div>
+    <section className="SinglePokemon">
+      <div className="container-SinglePokemon">
+        <div
+          style={{
+            backgroundColor:
+              pokemon.type && pokemon.type.length > 0
+                ? getBackgroundColor(pokemon.type[0])
+                : "gray",
+          }}
+          className="card-SinglePokemon"
+        >
+          <img src={pokemon.sprites} alt={pokemon.name} />
+        </div>
+        <div className="header-card-SinglePokemon">
+          <h2>{pokemon.name ? Cap(pokemon.name) : "non trovato"}</h2>
+          <div className="header-description-SinglePokemon">
+            <p>Weight: {pokemon.weight} kg</p>
+            <p>Height: {pokemon.height} cm</p>
+          </div>
+          <div className="header-description-SinglePokemon">
+            <div className="list-type">
+              <h1>Ability :</h1>
+              <ul>
+                {pokemon.abilities &&
+                  pokemon.abilities.map((ability) => (
+                    <li key={ability}>{ability}</li>
+                  ))}
+              </ul>
+            </div>
+            <div className="list-type">
+              <h1>Type :</h1>
+              <ul>
+                {pokemon.type &&
+                  pokemon.type.map((type) => <li key={type}>{type}</li>)}
+              </ul>
             </div>
           </div>
-        </Tilt>
-      </Link>
+        </div>
+
+       
+      </div>
     </section>
   );
 };
 
-export default Card;
+export default SinglePokemon;
