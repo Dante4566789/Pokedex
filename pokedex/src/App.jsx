@@ -8,8 +8,8 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Pokedex />} />
-        <Route path="/pokemon/:id" element={<SinglePokemon />} />
+        <Route path="/Pokedex" element={<Pokedex />} />
+        <Route path="/Pokedex/:id" element={<SinglePokemon />} />
       </Routes>
     </Router>
   );

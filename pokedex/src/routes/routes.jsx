@@ -4,7 +4,7 @@ import SinglePokemon from "../SinglePokemon";
 
 
 const routes = createBrowserRouter([
-    {path: "/", element: <Pokedex/>},
+    {path: "/Pokedex", element: <Pokedex/>},
     {path : "/:id", element: <SinglePokemon/>}
     
 ])

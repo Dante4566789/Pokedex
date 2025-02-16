@@ -98,7 +98,7 @@ const Card = ({ id }) => {
 
   return (
     <section className="card-pokemon">
-      <Link to={`/pokemon/${id}`} key={id}>
+      <Link to={`/Pokedex/${id}`} key={id}>
         <Tilt options={options} style={tiltStyle}>
           <div className="container">
             <div
